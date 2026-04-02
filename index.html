@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Media Group | Bikaner's #1 Billboard Empire</title>
+    <meta name="description" content="RS Media Group: Redefining outdoor media in Rajasthan with high-impact billboards, strategic placement, and kinetic precision.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Poppins:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&family=Montserrat:wght@800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0047FF",
+                        "primary-dark": "#0035c5",
+                        "secondary": "#FF6B00",
+                        "on-background": "#181c22",
+                        "surface": "#F4F6FF",
+                        "surface-container-low": "#f1f3fc",
+                        "surface-container-lowest": "#FFFFFF",
+                        "on-surface-variant": "#434657",
+                        "outline-variant": "#c4c5da",
+                    },
+                    fontFamily: {
+                        "headline": ["Montserrat", "Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Poppins", "Be Vietnam Pro", "sans-serif"],
+                        "label": ["Space Grotesk", "Barlow Condensed", "sans-serif"],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '26': '6.5rem',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary: #0047FF;
+            --secondary: #FF6B00;
+        }
+
+        .rs-gradient {
+            background: linear-gradient(135deg, #0035c5 0%, #0047FF 100%);
+        }
+
+        .glassmorphism {
+            background: rgba(244, 246, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .glassmorphism-dark {
+            background: rgba(24, 28, 34, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .diagonal-mask {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .diagonal-cut-card {
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+        }
+
+        .kinetic-mask {
+            clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+        }
+
+        .founder-mask {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 40px 60px -15px rgba(0, 71, 255, 0.08);
+        }
+
+        .glow-cta {
+            box-shadow: 0 4px 6px rgba(255, 107, 0, 0.2), 0 20px 40px rgba(255, 107, 0, 0.15);
+        }
+
+        .glow-cta:hover {
+            box-shadow: 0 6px 10px rgba(255, 107, 0, 0.3), 0 30px 60px rgba(255, 107, 0, 0.25);
+            transform: translateY(-2px);
+        }
+
+        @keyframes shutterOpen {
+            from { clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%); }
+            to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        .shutter-hover {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shutter-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FF6B00;
+            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+            transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: -1;
+        }
+
+        .shutter-hover:hover::after {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .shutter-hover:hover {
+            color: white;
+        }
+
+        .headline-massive {
+            font-size: clamp(3.5rem, 8vw, 8rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F6FF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0047FF;
+            border-radius: 10px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .stagger-reveal > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .stagger-reveal.active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-background selection:bg-secondary selection:text-white antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-[100] glassmorphism ambient-shadow border-b border-primary/5">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center px-6 md:px-12 py-5">
+            <a href="#" class="text-xl md:text-3xl font-black italic tracking-tighter text-primary font-headline shrink-0">
+                RS MEDIA GROUP
+            </a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-10 font-label font-bold uppercase tracking-widest text-sm text-on-background">
+                <a href="#home" class="hover:text-secondary transition-colors relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#inventory" class="hover:text-secondary transition-colors relative group">
+                    Inventory
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#success" class="hover:text-secondary transition-colors relative group">
+                    Success Stories
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#founder" class="hover:text-secondary transition-colors relative group">
+                    Visionary
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#contact" class="hover:text-secondary transition-colors relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:block bg-primary text-white px-6 md:px-8 py-2 md:py-3 rounded-md font-label font-bold uppercase tracking-widest text-[10px] md:text-xs glow-cta transition-all hover:bg-primary-dark shadow-lg">
+                    Book Space
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden text-primary p-2">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-[110] bg-[#181c22] transition-all duration-300">
+            <div class="flex flex-col h-full p-8 overflow-y-auto">
+                <div class="flex justify-between items-center mb-16">
+                    <div class="text-2xl font-black italic tracking-tighter text-primary font-headline">RS MEDIA GROUP</div>
+                    <button id="menu-close" class="text-white p-2">
+                        <span class="material-symbols-outlined text-4xl">close</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-10 font-headline font-black text-5xl text-white uppercase tracking-tighter">
+                    <a href="#home" class="mobile-nav-link hover:text-secondary transition-colors active:text-secondary">Home</a>
+                    <a href="#inventory" class="mobile-nav-link hover:text-secondary transition-colors active:text-secondary">Inventory</a>
+                    <a href="#success" class="mobile-nav-link hover:text-secondary transition-colors active:text-secondary">Success</a>
+                    <a href="#founder" class="mobile-nav-link hover:text-secondary transition-colors active:text-secondary">Visionary</a>
+                </div>
+                
+                <div class="mt-12">
+                    <a href="#contact" class="mobile-nav-link bg-primary text-white w-full py-5 rounded-md font-headline font-black text-xl uppercase tracking-widest text-center block shadow-[0_20px_40px_rgba(0,71,255,0.3)]">
+                        Book Space
+                    </a>
+                </div>
+
+                <div class="mt-auto pt-10 border-t border-white/10">
+                    <div class="text-secondary font-label font-bold uppercase tracking-widest text-[10px] mb-4">Quick Connect</div>
+                    <div class="text-white font-headline font-bold text-2xl mb-2">+91-9033355444</div>
+                    <div class="text-white/40 font-body text-sm italic">"Redefining Rajasthan's Skyline"</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-24 pb-20 md:pt-48 md:pb-40 overflow-hidden diagonal-mask rs-gradient text-white">
+        <!-- Floating Elements -->
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none select-none overflow-hidden">
+            <div class="headline-massive font-black text-white leading-none -mr-20 md:-mr-40 rotate-[15deg]">BIKANER</div>
+        </div>
+        
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
+            <div class="pt-8 md:pt-0 reveal-left">
+                <span class="bg-secondary text-white font-label font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:mb-8 mb-6 inline-block">The Kinetic Monument</span>
+                <h1 class="headline-massive font-black mb-6 md:mb-8 italic leading-[0.85]">
+                    DOMINATE THE <span class="text-white">SKYLINE</span>
+                </h1>
+                <p class="text-base md:text-xl opacity-90 max-w-lg mb-8 md:mb-12 font-light leading-relaxed border-l-4 border-secondary pl-4 md:pl-6">
+                    We don't just sell billboards; we build monuments that define the city's pulse. Rajasthan's #1 OOH media landscape starts here.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+                    <a href="#inventory" class="bg-white text-primary px-8 md:px-10 py-3 md:py-4 rounded-md font-headline font-black text-[12px] md:text-sm uppercase tracking-widest hover:bg-secondary hover:text-white transition-all shadow-xl text-center">
+                        Explore Locations
+                    </a>
+                    <a href="#success" class="flex items-center justify-center gap-3 font-label font-bold uppercase tracking-widest text-[12px] md:text-sm hover:text-secondary transition-colors py-2">
+                        View Portfolio <span class="material-symbols-outlined">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative group mt-8 md:mt-0 reveal-right">
+                <div class="absolute -top-10 md:-top-20 -right-10 md:-right-20 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-white/10 rounded-full blur-[60px] md:blur-[120px] group-hover:bg-secondary/20 transition-all duration-700"></div>
+                <div class="relative z-10 rounded-xl md:rounded-2xl overflow-hidden shadow-2xl skew-y-1 group-hover:skew-y-0 transition-transform duration-700">
+                    <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=1200" alt="Monumental Billboard" class="w-full h-[400px] md:h-[600px] object-cover hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-6 md:bottom-8 left-6 md:left-8">
+                        <div class="text-2xl md:text-4xl font-headline font-black text-white">#1 IN NORTH INDIA</div>
+                        <div class="font-label text-secondary uppercase font-bold tracking-widest mt-1 md:mt-2 text-xs md:text-sm">Strategic Impact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 -mt-10 md:-mt-16 relative z-20">
+        <div class="bg-surface-container-lowest grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 p-6 md:p-12 shadow-2xl rounded-xl md:rounded-2xl ambient-shadow border-t-4 border-primary">
+            <div class="text-center md:border-r border-outline-variant/30 py-2 md:py-0">
+                <div class="text-3xl md:text-5xl font-headline font-black text-primary md:mb-2">500+</div>
+                <div class="font-label uppercase text-[8px] md:text-xs tracking-widest text-on-surface-variant font-bold">Premium Sites</div>
+            </div>
+            <div class="text-center md:border-r border-outline-variant/30 py-2 md:py-0">
+                <div class="text-3xl md:text-5xl font-headline font-black text-secondary md:mb-2">12M+</div>
+                <div class="font-label uppercase text-[8px] md:text-xs tracking-widest text-on-surface-variant font-bold">Daily Reach</div>
+            </div>
+            <div class="text-center md:border-r border-outline-variant/30 py-2 md:py-0 text-on-background">
+                <div class="text-3xl md:text-5xl font-headline font-black text-primary md:mb-2">90%</div>
+                <div class="font-label uppercase text-[8px] md:text-xs tracking-widest text-on-surface-variant font-bold">Market Share</div>
+            </div>
+            <div class="text-center py-2 md:py-0">
+                <div class="text-3xl md:text-5xl font-headline font-black text-secondary md:mb-2">24/7</div>
+                <div class="font-label uppercase text-[8px] md:text-xs tracking-widest text-on-surface-variant font-bold">Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory Preview -->
+    <section id="inventory" class="py-16 md:py-32 bg-surface">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-6 md:gap-8 text-on-background">
+                <div>
+                    <span class="font-label text-secondary font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">Prime Selection</span>
+                    <h2 class="text-4xl md:text-6xl font-headline font-black mt-4 tracking-tighter reveal">Strategic <br><span class="text-primary">Locations</span></h2>
+                </div>
+                <div class="max-w-md reveal">
+                    <p class="text-on-surface-variant font-light text-base md:text-lg italic leading-relaxed">
+                        "Your brand doesn't just need space; it needs presence. We've hand-picked the highest dwell-time junctions in the city."
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 stagger-reveal">
+                <!-- Location 1 -->
+                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(0,45,197,0.06)] hover:-translate-y-2 transition-all duration-500">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800" alt="Jaipur Bypass" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                        <div class="absolute top-0 right-0 bg-secondary text-white px-8 py-3 font-label font-bold uppercase tracking-widest text-xs kinetic-mask">PREMIUM</div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-headline font-black mb-4">Jaipur Bypass Dominator</h3>
+                        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+                            Maximum visibility on the busiest arterial highway. Perfect for automotive and luxury real estate campaigns.
+                        </p>
+                        <div class="flex items-center justify-between py-6 border-t border-outline-variant/30">
+                            <div class="text-center">
+                                <div class="text-xl font-headline font-black text-primary">2.4M</div>
+                                <div class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Impressions/Mo</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xl font-headline font-black text-secondary">High</div>
+                                <div class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Dwell Time</div>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 py-4 bg-primary text-white font-headline font-black uppercase tracking-widest text-xs shutter-hover">Check Availability</button>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(0,45,197,0.06)] hover:-translate-y-2 transition-all duration-500">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800" alt="Cyber District" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-8 py-3 font-label font-bold uppercase tracking-widest text-xs kinetic-mask">DIGITAL</div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-headline font-black mb-4">Cyber District LED</h3>
+                        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+                            Bikaner's first curved 4K LED display. Transforming static spots into high-velocity digital experiences.
+                        </p>
+                        <div class="flex items-center justify-between py-6 border-t border-outline-variant/30">
+                            <div class="text-center">
+                                <div class="text-xl font-headline font-black text-primary">4.1M</div>
+                                <div class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Impressions/Mo</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xl font-headline font-black text-secondary">60FPS</div>
+                                <div class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Motion Refresh</div>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 py-4 bg-primary text-white font-headline font-black uppercase tracking-widest text-xs shutter-hover">Check Availability</button>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(0,45,197,0.06)] hover:-translate-y-2 transition-all duration-500">
+                    <div class="h-80 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=800" alt="Station Road" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
+                        <div class="absolute top-0 right-0 bg-secondary text-white px-8 py-3 font-label font-bold uppercase tracking-widest text-xs kinetic-mask">ICONIC</div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-headline font-black mb-4">Station Road Landmark</h3>
+                        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+                            Captures 100% of the morning and evening commuter flow. The most recognized billboard in the heart of the city.
+                        </p>
+                        <div class="flex items-center justify-between py-6 border-t border-outline-variant/30">
+                            <div class="text-center">
+                                <div class="text-xl font-headline font-black text-primary">1.8M</div>
+                                <div class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Impressions/Mo</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xl font-headline font-black text-secondary">92%</div>
+                                <div class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant">Recall Rate</div>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 py-4 bg-primary text-white font-headline font-black uppercase tracking-widest text-xs shutter-hover">Check Availability</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success History -->
+    <section id="success" class="py-16 md:py-32 bg-surface-container-low overflow-hidden relative text-on-background">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px]"></div>
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16 md:mb-24">
+                <span class="font-label text-secondary font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">Evolutionary Journey</span>
+                <h2 class="text-4xl md:text-6xl font-headline font-black mt-4 tracking-tighter">SUCCESS <span class="text-primary">LOGS</span></h2>
+            </div>
+
+            <div class="relative space-y-12 md:space-y-24">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary/10 md:-translate-x-1/2 hidden sm:block"></div>
+
+                <!-- 2015 -->
+                <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between w-full pl-12 md:pl-0">
+                    <div class="lg:w-[45%] lg:text-right mb-6 lg:mb-0">
+                        <div class="bg-surface-container-lowest p-6 md:p-10 rounded-xl md:rounded-2xl shadow-xl border-l-8 md:border-l-0 md:border-r-8 border-primary">
+                            <span class="font-label text-primary font-black text-xl md:text-3xl block mb-2 underline decoration-secondary underline-offset-8">2015</span>
+                            <h3 class="text-xl md:text-2xl font-headline font-black mb-3 md:mb-4">The Foundation</h3>
+                            <p class="text-on-surface-variant font-light italic text-sm md:text-base">Established with the first high-impact site at Bikaner Junction. A commitment to quality over quantity began here.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex absolute left-4 md:left-1/2 md:-translate-x-1/2 w-6 md:w-8 h-6 md:h-8 bg-surface-container-lowest rounded-full border-4 border-primary z-20 items-center justify-center">
+                        <div class="w-2 md:w-3 h-2 md:h-3 bg-primary rounded-full"></div>
+                    </div>
+                    <div class="lg:w-[45%] pl-12 hidden lg:block">
+                        <div class="text-8xl font-black text-on-surface-variant/5 select-none">FOUNDATION</div>
+                    </div>
+                </div>
+
+                <!-- 2018 -->
+                <div class="relative flex flex-col lg:flex-row-reverse items-start lg:items-center justify-between w-full pl-12 md:pl-0">
+                    <div class="lg:w-[45%] text-left mb-6 lg:mb-0">
+                        <div class="bg-surface-container-lowest p-6 md:p-10 rounded-xl md:rounded-2xl shadow-xl border-l-8 border-secondary">
+                            <span class="font-label text-secondary font-black text-xl md:text-3xl block mb-2 underline decoration-primary underline-offset-8">2018</span>
+                            <h3 class="text-xl md:text-2xl font-headline font-black mb-3 md:mb-4">100+ Strategic Hubs</h3>
+                            <p class="text-on-surface-variant font-light italic text-sm md:text-base">Rapid expansion across all major arterial roads in Bikaner. Became the most recognized OOH provider in the district.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex absolute left-4 md:left-1/2 md:-translate-x-1/2 w-6 md:w-8 h-6 md:h-8 bg-surface-container-lowest rounded-full border-4 border-secondary z-20 items-center justify-center">
+                        <div class="w-2 md:w-3 h-2 md:h-3 bg-secondary rounded-full"></div>
+                    </div>
+                    <div class="lg:w-[45%] pr-12 hidden lg:block text-right">
+                        <div class="text-8xl font-black text-on-surface-variant/5 select-none">SCALE</div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between w-full pl-12 md:pl-0">
+                    <div class="lg:w-[45%] lg:text-right mb-6 lg:mb-0">
+                        <div class="bg-primary p-8 md:p-12 rounded-xl md:rounded-2xl shadow-2xl text-white border-l-8 md:border-l-0 md:border-r-8 border-secondary">
+                            <span class="font-label text-secondary font-black text-xl md:text-3xl block mb-2">2024</span>
+                            <h3 class="text-2xl md:text-3xl font-headline font-black mb-3 md:mb-4">MARKET DOMINANCE</h3>
+                            <p class="opacity-90 font-light italic text-base md:text-lg leading-relaxed">Crowned as Bikaner's #1 Billboard Empire with 90% share of premium bypass and inner-city transit locations.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex absolute left-4 md:left-1/2 md:-translate-x-1/2 w-10 md:w-12 h-10 md:h-12 bg-secondary rounded-full border-4 border-white z-20 items-center justify-center shadow-[0_0_30px_rgba(255,107,0,0.6)]">
+                        <span class="material-symbols-outlined text-white fill-icon text-sm md:text-base">terminal</span>
+                    </div>
+                    <div class="lg:w-[45%] pl-12 hidden lg:block text-right">
+                        <div class="text-8xl font-black text-primary/10 select-none">EMPIRE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visionary Founder Spotlight -->
+    <section id="founder" class="py-16 md:py-32 bg-on-background relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/10 opacity-30"></div>
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center relative z-10 text-on-background">
+            <div class="order-2 lg:order-1">
+                <span class="bg-secondary text-white font-label font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs px-3 md:px-4 py-1.5 md:mb-8 mb-6 inline-block">The Visionary</span>
+                <h2 class="text-4xl md:text-8xl headline-massive font-black text-white italic mb-8 md:mb-10 leading-none">
+                    OUR <span class="text-secondary">PULSE</span>
+                </h2>
+                <div class="space-y-6 md:space-y-8">
+                    <p class="text-lg md:text-2xl text-white/90 italic font-light leading-relaxed border-l-4 border-secondary pl-6 md:pl-8">
+                        "In the heart of Rajasthan, we don't just sell space; we build monuments that define the city's pulse. Your brand's vision is my final commitment."
+                    </p>
+                    <div class="flex items-center gap-4 md:gap-6 pt-4 md:pt-6">
+                        <div class="h-14 md:h-20 w-1 md:w-1.5 bg-secondary"></div>
+                        <div>
+                            <div class="text-2xl md:text-4xl font-headline font-black text-white leading-tight">Pintu Rathi</div>
+                            <div class="font-label text-secondary uppercase tracking-[0.2em] font-bold text-[10px] md:text-sm mt-1">Founder & CEO</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 md:mt-16 bg-white/5 backdrop-blur-md p-6 md:p-8 rounded-xl border border-white/10 flex items-center gap-4 md:gap-6 group hover:border-secondary/50 transition-all duration-500">
+                    <div class="h-12 md:h-16 w-12 md:w-16 bg-secondary rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0">
+                        <span class="material-symbols-outlined text-2xl md:text-3xl fill-icon">verified_user</span>
+                    </div>
+                    <div>
+                        <div class="text-base md:text-xl font-headline font-bold text-white leading-snug">100% Transparency Guarantee</div>
+                        <p class="text-white/60 text-xs md:text-sm mt-1">Direct oversight on every premium site acquisition.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2 relative group mt-8 lg:mt-0">
+                <div class="absolute -inset-10 bg-primary/20 rounded-full blur-[60px] md:blur-[100px] animate-pulse"></div>
+                <div class="relative z-10 founder-mask overflow-hidden rounded-2xl md:rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] md:shadow-[0_0_80px_rgba(0,0,0,0.5)] border-t border-l border-white/10">
+                    <img src="photo.jpeg" alt="Pintu Rathi" class="w-full h-[400px] md:h-[700px] object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 md:bottom-10 left-6 md:left-10 right-6 md:right-10 leading-none">
+                        <div class="flex justify-between items-end">
+                            <div class="text-white/40 font-black text-3xl md:text-6xl select-none uppercase tracking-tighter">RS GROUP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="py-16 md:py-32 bg-surface">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 text-on-background">
+            <div class="text-center mb-16 md:mb-24">
+                <span class="font-label text-secondary font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">Tiered Visibility</span>
+                <h2 class="text-4xl md:text-6xl font-headline font-black mt-4 tracking-tighter">PRICING <span class="text-primary">STRUCTURE</span></h2>
+            </div>
+
+            <div class="overflow-x-auto ambient-shadow rounded-2xl">
+                <table class="w-full border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-primary text-white font-label uppercase tracking-widest text-xs">
+                            <th class="px-10 py-8 text-left">Inventory Tier</th>
+                            <th class="px-10 py-8 text-center">Monthly Booking</th>
+                            <th class="px-10 py-8 text-center">Semi-Annual</th>
+                            <th class="px-10 py-8 text-center bg-secondary font-black">Annual (Best Value)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/30 font-headline">
+                        <tr class="hover:bg-primary/5 transition-colors group">
+                            <td class="px-10 py-12">
+                                <div class="text-2xl font-black text-on-background group-hover:text-primary transition-colors">Prime Locations</div>
+                                <div class="text-on-surface-variant text-sm font-light mt-2 italic">H-Traffic High Reach Sites</div>
+                            </td>
+                            <td class="px-10 py-12 text-center text-xl font-bold">₹45,000</td>
+                            <td class="px-10 py-12 text-center">
+                                <span class="text-xl font-bold">₹2.4L</span>
+                                <span class="block text-xs text-secondary font-black mt-1">SAVE 11%</span>
+                            </td>
+                            <td class="px-10 py-12 text-center bg-secondary/5 border-x-4 border-secondary/20">
+                                <span class="text-3xl font-black text-secondary">₹4.5L</span>
+                                <span class="block text-xs text-primary font-black mt-2 tracking-widest uppercase">SAVE 16% + Priority</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-primary/5 transition-colors group">
+                            <td class="px-10 py-12">
+                                <div class="text-2xl font-black text-on-background group-hover:text-primary transition-colors">Normal Locations</div>
+                                <div class="text-on-surface-variant text-sm font-light mt-2 italic">Urban Arterial Networks</div>
+                            </td>
+                            <td class="px-10 py-12 text-center text-xl font-bold">₹25,000</td>
+                            <td class="px-10 py-12 text-center">
+                                <span class="text-xl font-bold">₹1.3L</span>
+                                <span class="block text-xs text-secondary font-black mt-1">SAVE 13%</span>
+                            </td>
+                            <td class="px-10 py-12 text-center bg-secondary/5 border-x-4 border-secondary/20">
+                                <span class="text-3xl font-black text-secondary">₹2.4L</span>
+                                <span class="block text-xs text-primary font-black mt-2 tracking-widest uppercase">SAVE 20% + Impact Lab</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-32 bg-surface-container-low overflow-hidden relative text-on-background">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 relative z-10">
+            <!-- HQ Info -->
+            <div class="space-y-8 md:space-y-12">
+                <div>
+                    <span class="font-label text-secondary font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">Headquarters</span>
+                    <h2 class="text-4xl md:text-5xl font-headline font-black mt-4 tracking-tighter uppercase">LET'S <span class="text-primary">TALK</span></h2>
+                </div>
+                
+                <div class="space-y-8 md:space-y-10">
+                    <div class="flex items-start gap-4 md:gap-6 border-l-4 border-primary pl-6 md:pl-8 py-1 md:py-2">
+                        <span class="material-symbols-outlined text-primary text-2xl md:text-3xl shrink-0">location_on</span>
+                        <div>
+                            <div class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-1 md:mb-2">Visit Our Studio</div>
+                            <div class="text-lg md:text-xl font-headline font-bold leading-tight">Old Gajner Road, Near Collectorate, Bikaner, RJ</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 md:gap-6 border-l-4 border-secondary pl-6 md:pl-8 py-1 md:py-2">
+                        <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl shrink-0">mail</span>
+                        <div>
+                            <div class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-1 md:mb-2">Email for Growth</div>
+                            <div class="text-lg md:text-xl font-headline font-bold leading-tight">growth@rsmediagroup.in</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 md:gap-6 border-l-4 border-primary pl-6 md:pl-8 py-1 md:py-2">
+                        <span class="material-symbols-outlined text-primary text-2xl md:text-3xl shrink-0">call</span>
+                        <div>
+                            <div class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-1 md:mb-2">Direct Line</div>
+                            <div class="text-lg md:text-xl font-headline font-bold leading-tight">+91-9033355444</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-xl md:rounded-2xl overflow-hidden shadow-2xl skew-y-1 hover:skew-y-0 transition-transform duration-700 border-4 border-white h-[250px] md:h-[350px]">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800" alt="Bikaner Map Placeholder" class="w-full h-full object-cover grayscale contrast-125">
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-2 bg-surface-container-lowest p-8 md:p-20 rounded-2xl md:rounded-3xl ambient-shadow relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-primary/5 rounded-full -mr-16 md:-mr-32 -mt-16 md:-mt-32 group-hover:scale-110 transition-transform duration-700"></div>
+                <div class="mb-8 md:mb-12">
+                    <h3 class="text-2xl md:text-4xl font-headline font-black text-on-background mb-3 md:mb-4">Request Your Monument</h3>
+                    <p class="text-on-surface-variant italic font-light text-sm md:text-base">Tell us your campaign goals and we'll map your dominance.</p>
+                </div>
+                
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-10">
+                    <div class="space-y-1 md:space-y-2 relative">
+                        <label class="font-label text-[8px] md:text-[10px] uppercase tracking-widest text-on-surface-variant font-bold absolute -top-3 md:-top-4 left-0">Your Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary transition-all py-3 md:py-4 px-0 text-lg md:text-xl font-headline font-bold placeholder:text-outline-variant/30">
+                    </div>
+                    <div class="space-y-1 md:space-y-2 relative">
+                        <label class="font-label text-[8px] md:text-[10px] uppercase tracking-widest text-on-surface-variant font-bold absolute -top-3 md:-top-4 left-0">Company</label>
+                        <input type="text" placeholder="Brand Inc." class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary transition-all py-3 md:py-4 px-0 text-lg md:text-xl font-headline font-bold placeholder:text-outline-variant/30">
+                    </div>
+                    <div class="space-y-1 md:space-y-2 relative">
+                        <label class="font-label text-[8px] md:text-[10px] uppercase tracking-widest text-on-surface-variant font-bold absolute -top-3 md:-top-4 left-0">Target Junction</label>
+                        <select class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary transition-all py-3 md:py-4 px-0 text-lg md:text-xl font-headline font-bold">
+                            <option>Old Gajner Road</option>
+                            <option>Station Road</option>
+                            <option>Jaipur Bypass</option>
+                            <option>District Collectorate</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1 md:space-y-2 relative">
+                        <label class="font-label text-[8px] md:text-[10px] uppercase tracking-widest text-on-surface-variant font-bold absolute -top-3 md:-top-4 left-0">Mobile</label>
+                        <input type="tel" placeholder="+91 XXXX XXX XXX" class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary transition-all py-3 md:py-4 px-0 text-lg md:text-xl font-headline font-bold placeholder:text-outline-variant/30">
+                    </div>
+                    <div class="md:col-span-2 space-y-1 md:space-y-2 relative pt-6 md:pt-8">
+                        <label class="font-label text-[8px] md:text-[10px] uppercase tracking-widest text-on-surface-variant font-bold absolute top-2 md:top-4 left-0">Your Vision</label>
+                        <textarea rows="3 md:4" placeholder="Tell us about your brand's kinetic momentum..." class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary transition-all py-3 md:py-4 px-0 text-lg md:text-xl font-headline font-bold placeholder:text-outline-variant/30"></textarea>
+                    </div>
+                    <div class="md:col-span-2 pt-6 md:pt-10">
+                        <button type="submit" class="w-full bg-secondary text-white py-4 md:py-6 rounded-md font-headline font-black text-base md:text-xl uppercase tracking-widest shadow-2xl hover:bg-primary transition-all glow-cta flex items-center justify-center gap-3 md:gap-4 group">
+                            INITIATE CAMPAIGN 
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-sm md:text-base">bolt</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-on-background py-24 text-white overflow-hidden relative">
+        <div class="absolute bottom-0 right-0 w-1/2 h-full opacity-5 pointer-events-none select-none">
+            <div class="headline-massive font-black text-white leading-none -mr-40 rotate-[15deg]">MONUMENTAL</div>
+        </div>
+        
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 relative z-10">
+            <div class="space-y-8">
+                <div class="text-3xl font-black italic tracking-tighter text-primary font-headline underline decoration-secondary">
+                    RS MEDIA GROUP
+                </div>
+                <p class="text-white/60 font-light leading-relaxed">
+                    Redefining the architectural OOH landscape of Rajasthan. Precision placement, monumental impact, and the split-second gaze of dominance.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-all border border-white/10 group">
+                        <span class="material-symbols-outlined text-white/60 group-hover:text-white transition-colors">public</span>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all border border-white/10 group">
+                        <span class="material-symbols-outlined text-white/60 group-hover:text-white transition-colors">share</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-label text-secondary font-bold uppercase tracking-widest text-xs mb-8">Navigation</h4>
+                <ul class="space-y-4 font-body font-light text-sm text-white/60">
+                    <li><a href="#home" class="hover:text-white transition-colors block">Our Vision</a></li>
+                    <li><a href="#inventory" class="hover:text-white transition-colors block">Inventory Search</a></li>
+                    <li><a href="#success" class="hover:text-white transition-colors block">Success Chronicles</a></li>
+                    <li><a href="#founder" class="hover:text-white transition-colors block">Pintu Rathi Spotlight</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-label text-secondary font-bold uppercase tracking-widest text-xs mb-8">Quick Connect</h4>
+                <ul class="space-y-4 font-body font-light text-sm text-white/60">
+                    <li>Old Gajner Road, Bikaner</li>
+                    <li>+91-9033355444</li>
+                    <li>growth@rsmediagroup.in</li>
+                    <li>Mon - Sat: 10AM - 8PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-label text-secondary font-bold uppercase tracking-widest text-xs mb-8">Newsletter</h4>
+                <p class="text-white/60 text-xs mb-6 font-light leading-relaxed italic">
+                    "Get the latest city traffic insights and prime spot alerts before they're gone."
+                </p>
+                <form class="flex border-b border-white/20 pb-4 focus-within:border-secondary transition-colors">
+                    <input type="email" placeholder="Email Address" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder:text-white/20 font-label font-bold text-xs uppercase tracking-widest px-0">
+                    <button type="submit" class="text-secondary font-black hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">trending_flat</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-label text-white/30 uppercase tracking-[0.2em]">
+            <div>© 2024 RS MEDIA GROUP. KINETIC MONUMENTS FOR THE BOLD.</div>
+            <div class="flex gap-10">
+                <a href="#" class="hover:text-secondary">Privacy Protocol</a>
+                <a href="#" class="hover:text-primary">Impact Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/919033355444" class="fixed bottom-10 right-10 z-[200] bg-[#25D366] text-white p-5 rounded-full shadow-[0_0_40px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all group flex items-center gap-0 hover:gap-3 overflow-hidden">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.53.909 3.139 1.387 4.793 1.388 5.42 0 9.83-4.411 9.833-9.833 0-2.628-1.023-5.097-2.88-6.956-1.857-1.858-4.325-2.88-6.952-2.88-5.42 0-9.83 4.412-9.833 9.832-.001 1.844.515 3.645 1.492 5.233l-1.012 3.696 3.784-.992zM17.473 14.382c-.301-.151-1.781-.879-2.057-.981-.276-.102-.477-.151-.677.151-.199.301-.777 1.056-.951 1.258-.175.202-.349.227-.651.076-.301-.151-1.272-.469-2.422-1.494-.894-.798-1.498-1.784-1.674-2.086-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.176.201-.301.301-.502.1-.201.05-.376-.025-.527-.075-.151-.677-1.631-.927-2.235-.243-.589-.491-.509-.677-.519-.175-.01-.376-.012-.577-.012-.201 0-.527.075-.802.376-.276.301-1.054 1.03-1.054 2.511 0 1.481 1.079 2.912 1.229 3.113.151.201 2.124 3.243 5.145 4.546.719.309 1.28.494 1.716.633.722.229 1.378.196 1.898.118.579-.087 1.781-.728 2.031-1.431.25-.702.25-1.305.175-1.431-.075-.126-.276-.201-.577-.352z"></path></svg>
+        <span class="max-w-0 font-label font-bold uppercase tracking-widest text-xs group-hover:max-w-xs transition-all duration-500 whitespace-nowrap">Chat Impact</span>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => mobileMenu.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('opacity-100');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        };
+
+        menuClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Reveal Animations
+        const observerOptions = { threshold: 0.1 };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.classList.contains('stagger-reveal')) {
+                        Array.from(entry.target.children).forEach((child, index) => {
+                            child.style.transitionDelay = `${index * 0.15}s`;
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
