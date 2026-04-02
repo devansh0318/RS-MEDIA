@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Poppins:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Montserrat:wght@800&amp;family=Be+Vietnam+Pro:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#181c22",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e0e2eb",
+              "on-primary-container": "#d4d9ff",
+              "tertiary-fixed": "#e0e2eb",
+              "surface-container-high": "#e6e8f1",
+              "surface": "#f9f9ff",
+              "outline": "#747688",
+              "on-tertiary-container": "#d9dbe4",
+              "on-secondary-fixed": "#351000",
+              "outline-variant": "#c4c5da",
+              "secondary-container": "#fe6b00",
+              "on-secondary-container": "#572000",
+              "surface-bright": "#f9f9ff",
+              "error": "#ba1a1a",
+              "background": "#f9f9ff",
+              "primary-fixed": "#dde1ff",
+              "primary-fixed-dim": "#b9c3ff",
+              "tertiary": "#454850",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#ffdbcc",
+              "on-background": "#181c22",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#a04100",
+              "on-surface": "#181c22",
+              "on-error": "#ffffff",
+              "surface-dim": "#d7dae2",
+              "primary": "#0035c5",
+              "on-primary-fixed": "#001257",
+              "secondary-fixed-dim": "#ffb693",
+              "tertiary-container": "#5d6068",
+              "inverse-on-surface": "#eef0f9",
+              "surface-tint": "#0046fa",
+              "surface-container-highest": "#e0e2eb",
+              "on-tertiary-fixed-variant": "#43474e",
+              "surface-container-low": "#f1f3fc",
+              "surface-container": "#ebeef6",
+              "on-secondary-fixed-variant": "#7a3000",
+              "inverse-surface": "#2d3037",
+              "inverse-primary": "#b9c3ff",
+              "primary-container": "#0047ff",
+              "on-surface-variant": "#434657",
+              "on-primary-fixed-variant": "#0033c0",
+              "tertiary-fixed-dim": "#c4c6cf",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-bg {
+            background: linear-gradient(135deg, #0035c5 0%, #0047ff 100%);
+        }
+        .glow-orange {
+            box-shadow: 0 4px 6px rgba(255, 107, 0, 0.2), 0 20px 40px rgba(255, 107, 0, 0.1);
+        }
+        .diagonal-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .text-glow-blue {
+            text-shadow: 0 0 20px rgba(0, 71, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F4F6FF]/80 backdrop-blur-xl dark:bg-[#181c22]/80 shadow-[0_40px_60px_rgba(0,71,255,0.08)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic text-[#0047FF] dark:text-[#0047FF] font-headline">RS Media Group</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#181c22] dark:text-[#F4F6FF] opacity-80 font-headline font-bold tracking-tight hover:text-[#FF6B00] transition-colors duration-300" href="#">Home</a>
+<a class="text-[#181c22] dark:text-[#F4F6FF] opacity-80 font-headline font-bold tracking-tight hover:text-[#FF6B00] transition-colors duration-300" href="#">Inventory</a>
+<a class="text-[#181c22] dark:text-[#F4F6FF] opacity-80 font-headline font-bold tracking-tight hover:text-[#FF6B00] transition-colors duration-300" href="#">Success Story</a>
+<a class="text-[#0047FF] border-b-2 border-[#FF6B00] pb-1 font-headline font-bold tracking-tight" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-white px-8 py-3 rounded-md font-headline font-bold scale-95 active:duration-150 hover:bg-secondary-container transition-all">Get Quote</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 overflow-hidden diagonal-cut kinetic-bg text-white">
+<div class="max-w-[1440px] mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container font-label text-sm uppercase tracking-widest mb-6">Connect with the best</span>
+<h1 class="text-6xl md:text-8xl font-black font-headline leading-none tracking-tighter mb-8">
+                    Get in Touch with Bikaner's <span class="text-[#FF6B00] text-glow-blue">Billboard King</span>
+</h1>
+<p class="text-xl opacity-90 max-w-lg mb-12 font-light">
+                    Transforming the desert landscape into a canvas for your brand's dominance. Ready to claim your spot on the skyline?
+                </p>
+<!-- Quick Contact Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-white/30 transition-all group">
+<span class="material-symbols-outlined text-secondary-container mb-3 text-3xl">call</span>
+<div class="font-label text-xs uppercase tracking-widest text-white/60">Direct Line</div>
+<div class="text-xl font-bold font-headline">+91-9033355444</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-white/30 transition-all group">
+<span class="material-symbols-outlined text-secondary-container mb-3 text-3xl">mail</span>
+<div class="font-label text-xs uppercase tracking-widest text-white/60">Email Address</div>
+<div class="text-xl font-bold font-headline">growth@rsmediagroup.in</div>
+</div>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -top-20 -right-20 w-[600px] h-[600px] bg-secondary-container/20 rounded-full blur-[120px]"></div>
+<img class="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700 w-full object-cover h-[500px]" data-alt="A massive high-tech digital billboard standing tall against a vibrant twilight sky in Bikaner city, urban cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0E9FG-xO6rYRCuRy4zcghYzycqpYI4krdCB31WbzengPBa5Axn0z7lNSAmCJcEwjIbr00dfMaBOlZx17gdxtOmW_7ySvPwX_rjomsyg6F1iH-EuaxqWEyqxmNloZ2e-HMDb3BlYFpXlodcH1aNaJrIY829Zdg7QY4rcPHGnZ0xl_MMD2yZqErKVXTUnnY6u_3fQMg2KtYx7f4OhJLW7Ata9Y8h1vkfviuX_w7YFSfrZ4I2fAjUC1lt-6PWPm1TQO5KRHqF5x4a1Q"/>
+</div>
+</div>
+</header>
+<!-- Inquiry & Address Section -->
+<main class="max-w-[1440px] mx-auto px-12 -mt-24 relative z-20 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Form Card -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-10 md:p-16 rounded-xl shadow-[0_40px_60px_rgba(0,71,255,0.06)]">
+<div class="mb-12">
+<h2 class="text-4xl font-black font-headline text-on-surface leading-tight mb-4">Let's Put Your Brand on the Skyline</h2>
+<div class="h-1.5 w-24 bg-secondary-container"></div>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-sm uppercase tracking-wider text-outline">Full Name</label>
+<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:ring-0 focus:border-secondary-container py-4 px-0 transition-all text-on-surface" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm uppercase tracking-wider text-outline">Company Name</label>
+<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:ring-0 focus:border-secondary-container py-4 px-0 transition-all text-on-surface" placeholder="Brand Inc." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm uppercase tracking-wider text-outline">Mobile Number</label>
+<input class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:ring-0 focus:border-secondary-container py-4 px-0 transition-all text-on-surface" placeholder="+91 XXXX XXX XXX" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm uppercase tracking-wider text-outline">Location Interest</label>
+<select class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:ring-0 focus:border-secondary-container py-4 px-0 transition-all text-on-surface">
+<option>Old Gajner Road</option>
+<option>Station Road</option>
+<option>Panchshati Circle</option>
+<option>Junagarh Fort Area</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label text-sm uppercase tracking-wider text-outline">Your Message</label>
+<textarea class="w-full bg-surface-container-high border-none border-b-2 border-transparent focus:ring-0 focus:border-secondary-container py-4 px-0 transition-all text-on-surface" placeholder="Tell us about your campaign goals..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 pt-4">
+<button class="w-full md:w-auto bg-secondary-container text-white px-12 py-5 rounded-md font-headline font-extrabold text-lg glow-orange hover:bg-primary transition-all flex items-center justify-center gap-3">
+                            SEND PROPOSAL
+                            <span class="material-symbols-outlined">trending_up</span>
+</button>
+</div>
+</form>
+</div>
+<!-- HQ Details & Map -->
+<div class="space-y-12">
+<div class="bg-primary p-12 rounded-xl text-white">
+<h3 class="text-3xl font-black font-headline mb-8">Headquarters</h3>
+<div class="space-y-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary-container">location_on</span>
+<div>
+<div class="font-label text-xs uppercase tracking-widest text-white/60 mb-1">Visit Us</div>
+<div class="text-lg leading-relaxed font-body">Old Gajner Road, Near Collectorate, Bikaner, Rajasthan 334001</div>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary-container">schedule</span>
+<div>
+<div class="font-label text-xs uppercase tracking-widest text-white/60 mb-1">Business Hours</div>
+<div class="text-lg leading-relaxed font-body">Mon - Sat: 10:00 AM - 8:00 PM<br/>Sunday: Closed</div>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-xl h-[400px] border-4 border-white">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center relative">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Stylized map showing the urban layout of Bikaner city with a prominent blue marker at Old Gajner Road" data-location="Bikaner, Rajasthan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZEoP10xEss1jEvJaInJMgE90OGxBumouSQJHT5Gahhcsoo6SrX-5Mj8xz58jkts5AVc2qHBSlrGgznTahj-O5SR6xzRGQ4vGchT8TJsGHKIY6hX5OE6w62n9w9yL15-kRd-C3YVZsyiY9Cx6o6Hx2zWbV_rJWVvy64K_B8dWvroOFmP7BRhSpzngeASw9UiSLvpkgo8ErHM6AT9YwyVPsR9XiZ97ebE1i1lut2HcPzNPr3weI__EVOPDYGlfc6fvkLxujYp1A2Bw"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="relative">
+<div class="absolute -inset-4 bg-secondary-container rounded-full animate-ping opacity-25"></div>
+<span class="material-symbols-outlined text-secondary-container text-5xl relative z-10" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-10 right-10 z-50 bg-[#25D366] text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group" href="https://wa.me/919033355444">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.53.909 3.139 1.387 4.793 1.388 5.42 0 9.83-4.411 9.833-9.833 0-2.628-1.023-5.097-2.88-6.956-1.857-1.858-4.325-2.88-6.952-2.88-5.42 0-9.83 4.412-9.833 9.832-.001 1.844.515 3.645 1.492 5.233l-1.012 3.696 3.784-.992zM17.473 14.382c-.301-.151-1.781-.879-2.057-.981-.276-.102-.477-.151-.677.151-.199.301-.777 1.056-.951 1.258-.175.202-.349.227-.651.076-.301-.151-1.272-.469-2.422-1.494-.894-.798-1.498-1.784-1.674-2.086-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.176.201-.301.301-.502.1-.201.05-.376-.025-.527-.075-.151-.677-1.631-.927-2.235-.243-.589-.491-.509-.677-.519-.175-.01-.376-.012-.577-.012-.201 0-.527.075-.802.376-.276.301-1.054 1.03-1.054 2.511 0 1.481 1.079 2.912 1.229 3.113.151.201 2.124 3.243 5.145 4.546.719.309 1.28.494 1.716.633.722.229 1.378.196 1.898.118.579-.087 1.781-.728 2.031-1.431.25-.702.25-1.305.175-1.431-.075-.126-.276-.201-.577-.352z"></path>
+</svg>
+<span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-on-surface text-white px-4 py-2 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp Us!</span>
+</a>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 mt-20 bg-[#181c22] dark:bg-[#0a0c0e] border-t border-[#F4F6FF]/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1440px] mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-black text-[#F4F6FF] mb-6 font-headline">RS Media Group</div>
+<p class="text-[#F4F6FF]/60 text-sm leading-relaxed mb-8">Dominating the North Indian outdoor media landscape with high-impact billboards and strategic advertising solutions.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0047FF] transition-all cursor-pointer">
+<img class="w-5 h-5 opacity-80" data-alt="Facebook icon in minimalist white line style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApYwwCwrVTwi64otXyhlvaQdfV0KHBBbaH1m_gSNdY0tr_E854nJ50ztoLvCkaMOnie7Y02MbtwF_2YoW_vwTE6t-PIikBcUCtvqx2Su9-qMJlB2pAt_cxipl9aCxRk8NUUWA8ue8rhTItWb6BNuJYJ_aV_8B8Z38ELtOgLVBZIHG654XV0-avrdTV7egdl75ZIg6vnldim59XtINA7pPE2DcHZ1B6123tepwK4rCFhM0bx0Yapn6NZV33E43AkQnH54-61BrVyvY"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0047FF] transition-all cursor-pointer">
+<img class="w-5 h-5 opacity-80" data-alt="Instagram icon in minimalist white line style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_TTeMoYJIeKR0gfDgoSwjBHdDIeTKGRw5kXea10rKl0NLL63sl2_zMmyYnboLRZNL0cy-4CPoztfj5DmmI-53-w1l-kEgi1amZXFwpA4uzM09kCSQjFCJoPuulsxkCilNgRDGHY2sN9Hw-QcFxfS8IUbn49Q_xE75GSUsMWPzDdO4Bween7eT96OXkYjTQCr3O2EBWdDiD6wexaCYi7B906sMK9CiBh1iqdIjPlCzAHCinc9FiiWQsvXwBOJvhFI-yRoj8-BDA94"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0047FF] transition-all cursor-pointer">
+<img class="w-5 h-5 opacity-80" data-alt="LinkedIn icon in minimalist white line style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0iZoQUmzx6EFNTNe2_iQSPwgwk4I_E9ekBvx3RWPhYZByN6rSeFYjBHFjaKTPh6ggkrHFrOWX9jsHgjQkL6tYgLGBqRac3zzZMWi1-7mIvOyP-XVjy5ZvzMXcYSpaoAqHkclm7z6oWL4rDycD2OsK8LTnJrzfOXuUU5bEK-7eRS3iPsOotIiOuXJLdIiHLXEqrvaBcQISveO4cERYgNZMqfVXFa-U3Gl3cI7-rHJ16bFXcfs4uDzFTiqi5UHvwpw05HsyLqEv4WM"/>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-[#FF6B00] font-headline font-bold mb-6">Explore</h4>
+<ul class="space-y-4 font-['Poppins'] font-light text-sm">
+<li><a class="text-[#F4F6FF]/60 hover:text-[#0047FF] transition-all" href="#">Home</a></li>
+<li><a class="text-[#F4F6FF]/60 hover:text-[#0047FF] transition-all" href="#">Inventory Locations</a></li>
+<li><a class="text-[#F4F6FF]/60 hover:text-[#0047FF] transition-all" href="#">Success Story</a></li>
+<li><a class="text-[#F4F6FF]/60 hover:text-[#0047FF] transition-all" href="#">Founder Spotlight</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#FF6B00] font-headline font-bold mb-6">Legal</h4>
+<ul class="space-y-4 font-['Poppins'] font-light text-sm">
+<li><a class="text-[#F4F6FF]/60 hover:text-[#0047FF] transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-[#F4F6FF]/60 hover:text-[#0047FF] transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#FF6B00] font-headline font-bold mb-6">Newsletter</h4>
+<p class="text-[#F4F6FF]/60 text-sm mb-4">Get the latest advertising trends &amp; new location alerts.</p>
+<div class="flex focus-within:ring-2 focus-within:ring-[#0047FF] rounded overflow-hidden">
+<input class="bg-white/5 border-none text-white text-sm py-3 px-4 w-full focus:ring-0" placeholder="Email Address" type="email"/>
+<button class="bg-[#0047FF] px-4"><span class="material-symbols-outlined text-white">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-16 pt-8 border-t border-white/5 text-center">
+<p class="font-['Poppins'] font-light text-sm text-[#F4F6FF]/40 text-sm">© 2024 RS Media Group. All Rights Reserved. GST: 08AABCR1234M1Z5</p>
+</div>
+</footer>
+</body></html>
