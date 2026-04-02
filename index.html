@@ -19,15 +19,15 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#0047FF",
-                        "primary-dark": "#0035c5",
+                        "primary": "#FF3131",
+                        "primary-dark": "#D21F1F",
                         "secondary": "#FF6B00",
                         "on-background": "#181c22",
-                        "surface": "#F4F6FF",
-                        "surface-container-low": "#f1f3fc",
+                        "surface": "#FFFAFA",
+                        "surface-container-low": "#FFF5F5",
                         "surface-container-lowest": "#FFFFFF",
-                        "on-surface-variant": "#434657",
-                        "outline-variant": "#c4c5da",
+                        "on-surface-variant": "#574343",
+                        "outline-variant": "#DAC4C4",
                     },
                     fontFamily: {
                         "headline": ["Montserrat", "Plus Jakarta Sans", "sans-serif"],
@@ -54,16 +54,16 @@
 
     <style>
         :root {
-            --primary: #0047FF;
+            --primary: #FF3131;
             --secondary: #FF6B00;
         }
 
         .rs-gradient {
-            background: linear-gradient(135deg, #0035c5 0%, #0047FF 100%);
+            background: linear-gradient(135deg, #D21F1F 0%, #FF3131 100%);
         }
 
         .glassmorphism {
-            background: rgba(244, 246, 255, 0.8);
+            background: rgba(255, 250, 250, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
@@ -91,7 +91,7 @@
         }
 
         .ambient-shadow {
-            box-shadow: 0 40px 60px -15px rgba(0, 71, 255, 0.08);
+            box-shadow: 0 40px 60px -15px rgba(255, 49, 49, 0.08);
         }
 
         .glow-cta {
@@ -152,10 +152,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #F4F6FF;
+            background: #FFFAFA;
         }
         ::-webkit-scrollbar-thumb {
-            background: #0047FF;
+            background: #FF3131;
             border-radius: 10px;
         }
         .reveal {
@@ -348,7 +348,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 stagger-reveal">
                 <!-- Location 1 -->
-                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(0,45,197,0.06)] hover:-translate-y-2 transition-all duration-500">
+                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(210,31,31,0.06)] hover:-translate-y-2 transition-all duration-500">
                     <div class="h-80 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800" alt="Jaipur Bypass" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
                         <div class="absolute top-0 right-0 bg-secondary text-white px-8 py-3 font-label font-bold uppercase tracking-widest text-xs kinetic-mask">PREMIUM</div>
@@ -373,7 +373,7 @@
                 </div>
 
                 <!-- Location 2 -->
-                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(0,45,197,0.06)] hover:-translate-y-2 transition-all duration-500">
+                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(210,31,31,0.06)] hover:-translate-y-2 transition-all duration-500">
                     <div class="h-80 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800" alt="Cyber District" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
                         <div class="absolute top-0 right-0 bg-primary text-white px-8 py-3 font-label font-bold uppercase tracking-widest text-xs kinetic-mask">DIGITAL</div>
@@ -398,7 +398,7 @@
                 </div>
 
                 <!-- Location 3 -->
-                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(0,45,197,0.06)] hover:-translate-y-2 transition-all duration-500">
+                <div class="group bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow shadow-[0_40px_60px_rgba(210,31,31,0.06)] hover:-translate-y-2 transition-all duration-500">
                     <div class="h-80 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=800" alt="Station Road" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0">
                         <div class="absolute top-0 right-0 bg-secondary text-white px-8 py-3 font-label font-bold uppercase tracking-widest text-xs kinetic-mask">ICONIC</div>
